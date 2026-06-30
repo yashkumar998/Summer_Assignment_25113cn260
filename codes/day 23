@@ -1,0 +1,113 @@
+Q89. Find First Non-Repeating Character
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j, count;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for(i = 0; str[i] != '\0'; i++) {
+        count = 0;
+        for(j = 0; str[j] != '\0'; j++) {
+            if(str[i] == str[j])
+                count++;
+        }
+        if(count == 1) {
+            printf("First Non-Repeating Character = %c", str[i]);
+            return 0;
+        }
+    }
+
+    printf("No Non-Repeating Character Found");
+    return 0;
+}
+C
+Q90. Find First Repeating Character
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for(i = 0; str[i] != '\0'; i++) {
+        for(j = i + 1; str[j] != '\0'; j++) {
+            if(str[i] == str[j]) {
+                printf("First Repeating Character = %c", str[i]);
+                return 0;
+            }
+        }
+    }
+
+    printf("No Repeating Character Found");
+    return 0;
+}
+Q91. Check Anagram Strings
+C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100];
+    int i, count1[256] = {0}, count2[256] = {0};
+
+    printf("Enter first string: ");
+    gets(str1);
+
+    printf("Enter second string: ");
+    gets(str2);
+
+    if(strlen(str1) != strlen(str2)) {
+        printf("Not Anagrams");
+        return 0;
+    }
+
+    for(i = 0; str1[i] != '\0'; i++) {
+        count1[(unsigned char)str1[i]]++;
+        count2[(unsigned char)str2[i]]++;
+    }
+
+    for(i = 0; i < 256; i++) {
+        if(count1[i] != count2[i]) {
+            printf("Not Anagrams");
+            return 0;
+        }
+    }
+
+    printf("Strings are Anagrams");
+    return 0;
+}
+C
+Q92. Find Maximum Occurring Character
+#include <stdio.h>
+
+int main() {
+    char str[100], maxChar;
+    int freq[256] = {0};
+    int i, max = 0;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for(i = 0; str[i] != '\0'; i++)
+        freq[(unsigned char)str[i]]++;
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(freq[(unsigned char)str[i]] > max) {
+            max = freq[(unsigned char)str[i]];
+            maxChar = str[i];
+        }
+    }
+
+    printf("Maximum Occurring Character = %c", maxChar);
+    printf("\nFrequency = %d", max);
+
+    return 0;
+}
+C
