@@ -1,0 +1,93 @@
+ Q117. Student Record System Using Arrays & Strings
+#include <stdio.h>
+
+int main()
+{
+    int roll[5], i;
+    char name[5][20];
+
+    for(i=0;i<5;i++)
+    {
+        printf("Enter Roll and Name: ");
+        scanf("%d%s",&roll[i],name[i]);
+    }
+
+    printf("\nStudent Records\n");
+
+    for(i=0;i<5;i++)
+        printf("%d %s\n",roll[i],name[i]);
+
+    return 0;
+}
+Q118. Mini Library System
+#include <stdio.h>
+
+int main()
+{
+    char book[5][30];
+    int i;
+
+    for(i=0;i<5;i++)
+    {
+        printf("Enter Book Name: ");
+        scanf("%s",book[i]);
+    }
+
+    printf("\nBooks Available\n");
+
+    for(i=0;i<5;i++)
+        printf("%s\n",book[i]);
+
+    return 0;
+}
+Q119. Mini Employee Management System
+#include <stdio.h>
+
+struct Employee
+{
+    int id;
+    char name[30];
+};
+
+int main()
+{
+    struct Employee e[3];
+    int i;
+
+    for(i=0;i<3;i++)
+    {
+        printf("Enter ID and Name: ");
+        scanf("%d%s",&e[i].id,e[i].name);
+    }
+
+    printf("\nEmployee Details\n");
+
+    for(i=0;i<3;i++)
+        printf("%d %s\n",e[i].id,e[i].name);
+
+    return 0;
+}
+Q120. Mini Project Using Arrays, Strings & Functions
+#include <stdio.h>
+
+void display(int a[], int n)
+{
+    int i;
+    printf("Array Elements: ");
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+}
+
+int main()
+{
+    int a[5], i;
+
+    printf("Enter 5 Elements:\n");
+
+    for(i=0;i<5;i++)
+        scanf("%d",&a[i]);
+
+    display(a,5);
+
+    return 0;
+}
