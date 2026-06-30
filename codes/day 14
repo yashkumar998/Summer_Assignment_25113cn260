@@ -1,0 +1,103 @@
+ Q53. Linear Search
+#include <stdio.h>
+
+int main() {
+    int n, i, key;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++) {
+        if(a[i] == key) {
+            printf("Found at index %d", i);
+            return 0;
+        }
+    }
+
+    printf("Not Found");
+
+    return 0;
+}
+Q54. Frequency of an Element
+#include <stdio.h>
+
+int main() {
+    int n, i, key, count = 0;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++) {
+        if(a[i] == key)
+            count++;
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
+Q55. Second Largest Element
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int n, i;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    int first = INT_MIN;
+    int second = INT_MIN;
+
+    for(i = 0; i < n; i++) {
+        if(a[i] > first) {
+            second = first;
+            first = a[i];
+        }
+        else if(a[i] > second && a[i] != first) {
+            second = a[i];
+        }
+    }
+
+    printf("%d", second);
+
+    return 0;
+}
+Q56. Find Duplicates in Array
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    printf("Duplicates: ");
+
+    for(i = 0; i < n; i++) {
+        for(j = i + 1; j < n; j++) {
+            if(a[i] == a[j]) {
+                printf("%d ", a[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
