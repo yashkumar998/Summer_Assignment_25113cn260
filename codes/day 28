@@ -1,0 +1,103 @@
+ Q109. Library Management System
+#include <stdio.h>
+
+struct Book
+{
+    int id;
+    char name[50];
+    char author[50];
+};
+
+int main()
+{
+    struct Book b;
+
+    printf("Enter Book ID: ");
+    scanf("%d",&b.id);
+
+    printf("Enter Book Name: ");
+    scanf("%s",b.name);
+
+    printf("Enter Author Name: ");
+    scanf("%s",b.author);
+
+    printf("\nBook Details\n");
+    printf("ID : %d\n",b.id);
+    printf("Book : %s\n",b.name);
+    printf("Author : %s\n",b.author);
+
+    return 0;
+}
+Q110. Bank Account System
+#include <stdio.h>
+
+int main()
+{
+    int accNo;
+    char name[30];
+    float balance, deposit, withdraw;
+
+    printf("Enter Account Number: ");
+    scanf("%d",&accNo);
+
+    printf("Enter Name: ");
+    scanf("%s",name);
+
+    printf("Enter Balance: ");
+    scanf("%f",&balance);
+
+    printf("Deposit Amount: ");
+    scanf("%f",&deposit);
+    balance += deposit;
+
+    printf("Withdraw Amount: ");
+    scanf("%f",&withdraw);
+
+    if(withdraw <= balance)
+        balance -= withdraw;
+    else
+        printf("Insufficient Balance\n");
+
+    printf("Final Balance = %.2f",balance);
+
+    return 0;
+}
+Q111. Ticket Booking System
+#include <stdio.h>
+
+int main()
+{
+    int seats, price = 200;
+
+    printf("Enter Number of Tickets: ");
+    scanf("%d",&seats);
+
+    printf("Total Amount = %d",seats * price);
+
+    return 0;
+}
+Q112. Contact Management System
+#include <stdio.h>
+
+struct Contact
+{
+    char name[30];
+    char phone[15];
+};
+
+int main()
+{
+    struct Contact c;
+
+    printf("Enter Name: ");
+    scanf("%s",c.name);
+
+    printf("Enter Phone Number: ");
+    scanf("%s",c.phone);
+
+    printf("\nContact Details\n");
+    printf("Name : %s\n",c.name);
+    printf("Phone : %s\n",c.phone);
+
+    return 0;
+}
