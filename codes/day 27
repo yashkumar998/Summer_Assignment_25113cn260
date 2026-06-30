@@ -1,0 +1,79 @@
+ Q106. Employee Management System
+#include <stdio.h>
+
+struct Employee
+{
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main()
+{
+    struct Employee e;
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e.id);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", e.name);
+
+    printf("Enter Salary: ");
+    scanf("%f", &e.salary);
+
+    printf("\nEmployee Details\n");
+    printf("ID     : %d\n", e.id);
+    printf("Name   : %s\n", e.name);
+    printf("Salary : %.2f\n", e.salary);
+
+    return 0;
+}
+Q107. Salary Management System
+#include <stdio.h>
+
+int main()
+{
+    float basic, hra, da, gross;
+
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+
+    hra = basic * 0.20;
+    da = basic * 0.10;
+    gross = basic + hra + da;
+
+    printf("\nBasic Salary : %.2f\n", basic);
+    printf("HRA          : %.2f\n", hra);
+    printf("DA           : %.2f\n", da);
+    printf("Gross Salary : %.2f\n", gross);
+
+    return 0;
+}
+Q108. Marksheet Generation
+#include <stdio.h>
+
+int main()
+{
+    int m1, m2, m3, total;
+    float percentage;
+
+    printf("Enter Marks of 3 Subjects: ");
+    scanf("%d%d%d", &m1, &m2, &m3);
+
+    total = m1 + m2 + m3;
+    percentage = total / 3.0;
+
+    printf("\nTotal = %d", total);
+    printf("\nPercentage = %.2f", percentage);
+
+    if (percentage >= 90)
+        printf("\nGrade A");
+    else if (percentage >= 75)
+        printf("\nGrade B");
+    else if (percentage >= 50)
+        printf("\nGrade C");
+    else
+        printf("\nFail");
+
+    return 0;
+}
